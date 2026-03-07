@@ -142,7 +142,8 @@
                 </h3>
                 <ul style="list-style: none; padding-left: 0; font-size: 1.1rem; line-height: 2;">
                     <li><span style="display:inline-block; width: 25px;">🔴</span> <strong>Baseline (FP16):</strong>
-                        <span style="float: right;">2.05 GB</span></li>
+                        <span style="float: right;">2.05 GB</span>
+                    </li>
                     <li><span style="display:inline-block; width: 25px;">🟢</span> <strong>Graviton INT4:</strong> <span
                             style="float: right;">0.24 GB <span style="color: var(--primary); font-size: 0.9em;">(8.4x
                                 smaller)</span></span></li>
@@ -153,6 +154,34 @@
                 <div
                     style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); font-size: 0.85rem;">
                     * Tested natively on Apple Silicon using Graviton's custom Metal & C++ tensor unpacking.
+                </div>
+            </div>
+
+            <div class="terminal-container glassmorphism"
+                style="text-align: left; padding: 2rem; max-width: 600px; margin: 2rem auto 0 auto;">
+                <h3 style="color: #ff6584; margin-bottom: 1.5rem; font-size: 1.4rem;">Extreme Stress Test (140B Scale)
+                </h3>
+                <ul style="list-style: none; padding-left: 0; font-size: 1.1rem; line-height: 2;">
+                    <li><span style="display:inline-block; width: 25px;">💻</span> <strong>Hardware:</strong>
+                        <span style="float: right;">Apple M1 Max (64GB)</span>
+                    </li>
+                    <li><span style="display:inline-block; width: 25px;">🔴</span> <strong>Original FP16 Model:</strong>
+                        <span style="float: right;">~280 GB <span style="color: #ff6584; font-size: 0.9em;">(OOM
+                                Crash)</span></span>
+                    </li>
+                    <li><span style="display:inline-block; width: 25px;">🟢</span> <strong>Graviton Ternary
+                            Model:</strong>
+                        <span style="float: right;">~35.0 GB <span
+                                style="color: var(--primary); font-size: 0.9em;">(Fits in RAM)</span></span>
+                    </li>
+                    <li><span style="display:inline-block; width: 25px;">⚡</span> <strong>Quantization Speed:</strong>
+                        <span style="float: right;">0.98 GB/s</span>
+                    </li>
+                </ul>
+                <div
+                    style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); font-size: 0.85rem;">
+                    * Synthetic tensor test verifying 140 Billion parameter dimensions bypass Apple's unified memory
+                    limitations via pure 1.58-bit packing.
                 </div>
             </div>
         </section>

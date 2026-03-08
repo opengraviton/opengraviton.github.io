@@ -5,48 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="OpenGraviton - Ultra-efficient open-source AI inference engine. Run massive models on consumer hardware with QuantizedLinear (INT8/INT4/Ternary), speculative decoding, dynamic sparsity, and layer streaming. Includes Graviton UI — a dark-themed chat interface. 88 tests, battle-tested.">
+        content="Run powerful AI models on your own computer. Graviton is a free, open-source engine that makes 70B+ parameter language models fit on a laptop — no cloud, no GPU server, no monthly bill.">
     <meta name="keywords"
-        content="Graviton, OpenGraviton, AI Engine, Large Language Models, Local AI, Mac Mini AI, Model Quantization, QuantizedLinear, Mixed Precision, Speculative Decoding, Layer Skip, KV Cache Compression, MoE, Open Source AI, Ternary Quantization">
+        content="run AI locally, local LLM, run LLM on laptop, free AI, open source AI, AI without GPU, AI on Mac, 70B model laptop, private AI, offline AI, Graviton, OpenGraviton, AI for everyone, affordable AI, consumer hardware AI, Mac Mini AI, Apple Silicon AI">
 
-    <!-- Open Graph / Meta -->
-    <meta property="og:title" content="OpenGraviton | Defy the gravitational pull of massive AI models">
+    <meta property="og:title" content="Graviton — Run AI on Your Own Computer">
     <meta property="og:description"
-        content="A state-of-the-art inference engine combining QuantizedLinear (INT8/INT4/Ternary), mixed-precision quantization, speculative decoding with layer-skip, and dynamic sparsity to run massive AI models on consumer hardware.">
+        content="Free, open-source engine that runs 70B+ parameter AI models on your laptop. No cloud. No GPU server. No monthly bill.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://opengraviton.github.io">
     <meta property="og:image" content="https://opengraviton.github.io/assets/logo.svg">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="OpenGraviton | Run Trillion Parameter Models Locally">
+    <meta name="twitter:title" content="Graviton — Run AI on Your Own Computer">
     <meta name="twitter:description"
-        content="Ultra-efficient open-source AI inference engine. Run massive models on consumer hardware.">
+        content="Free, open-source engine that runs 70B+ parameter AI models on your laptop. No cloud, no GPU server, no monthly bill.">
 
-    <!-- JSON-LD for AI & Search Engines -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "Graviton Engine",
-      "operatingSystem": "macOS, Linux",
+      "name": "Graviton",
+      "alternateName": "OpenGraviton",
+      "operatingSystem": "macOS, Linux, Windows",
       "applicationCategory": "DeveloperApplication",
-      "description": "An open-source highly-optimized AI inference engine featuring QuantizedLinear (INT8/INT4/1.58-bit ternary), mixed-precision quantization, speculative decoding with layer-skip, dynamic sparsity, layer streaming, and Graviton UI chat interface — enabling local execution of colossal AI models on minimal hardware. Battle-tested with 88 automated tests.",
+      "description": "Free, open-source AI inference engine that runs 70B+ parameter language models on consumer hardware like a Mac or laptop. Compresses a 144 GB model down to 36 GB using streaming layer-by-layer quantization, so you can run powerful AI locally without a cloud subscription or GPU server.",
       "url": "https://opengraviton.github.io",
-      "sourceOrganization": {
-        "@type": "Organization",
-        "name": "OpenGraviton",
-        "url": "https://github.com/opengraviton"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
+      "downloadUrl": "https://github.com/opengraviton/graviton",
+      "softwareVersion": "0.1.0",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": [
+        "Run 70B+ parameter AI models on a laptop or Mac Mini",
+        "One command install and launch",
+        "Compresses models up to 10x to fit in limited memory",
+        "Streams large models layer-by-layer so they never exceed your RAM",
+        "Headless API server for AI agents on low-budget hardware",
+        "Works on Apple Silicon, NVIDIA GPU, or CPU",
+        "Chat UI included — pick a model and start talking",
+        "Completely free and open-source (Apache 2.0)"
+      ]
     }
     </script>
 
-    <title>OpenGraviton - Ultra-Efficient AI Inference Engine</title>
+    <title>Graviton — Run AI on Your Own Computer</title>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap"
@@ -61,272 +63,179 @@
 
     <nav class="navbar glassmorphism">
         <div class="nav-brand">
-            <img src="assets/logo.svg" alt="Graviton Logo" class="nav-logo">
-            <span>OpenGraviton</span>
+            <img src="assets/logo.svg" alt="Graviton" class="nav-logo">
+            <span>Graviton</span>
         </div>
         <div class="nav-links">
-            <a href="https://github.com/opengraviton/graviton" target="_blank" class="nav-link">Engine</a>
-            <a href="https://github.com/opengraviton/graviton-ui" target="_blank" class="nav-link">Web UI</a>
-            <a href="#features" class="nav-link">Architecture</a>
-            <a href="#quickstart" class="btn btn-primary">Get Started</a>
+            <a href="https://github.com/opengraviton/graviton" target="_blank" class="nav-link">GitHub</a>
+            <a href="#how" class="nav-link">How It Works</a>
+            <a href="#start" class="btn btn-primary">Get Started</a>
         </div>
     </nav>
 
     <main>
+        <!-- ════════ HERO ════════ -->
         <section class="hero">
             <div class="hero-content">
                 <div class="logo-container floating">
-                    <img src="assets/logo.svg" alt="Graviton Master Logo" class="main-logo">
+                    <img src="assets/logo.svg" alt="Graviton" class="main-logo">
                 </div>
-                <h1 class="gradient-text">Defying the gravitational pull of massive AI models</h1>
+                <h1 class="gradient-text">Run powerful AI on your own computer</h1>
                 <p class="subtitle">
-                    Run unprecedentedly large, trillion-parameter AI models directly on minimal hardware like the Mac
-                    Mini. The ultimate open-source inference engine powered by <strong>QuantizedLinear</strong> (INT8/INT4/Ternary),
-                    <strong>Speculative Decoding</strong>, <strong>Dynamic Sparsity</strong>, and <strong>MMap Layer Streaming</strong>.
+                    Today's best AI models need a $10,000 GPU server.
+                    Graviton makes them run on <strong>a laptop</strong>.
+                    Free. Open-source. One command.
                 </p>
                 <div class="cta-group">
-                    <a href="https://github.com/opengraviton/graviton" target="_blank" class="btn btn-glow">View Source
-                        on GitHub</a>
-                    <a href="https://github.com/opengraviton/graviton-ui" target="_blank" class="btn btn-outline">Try the Web UI</a>
-                    <a href="#features" class="btn btn-outline">Explore Tech</a>
+                    <a href="#start" class="btn btn-glow">Get Started</a>
+                    <a href="https://github.com/opengraviton/graviton" target="_blank" class="btn btn-outline">View on GitHub</a>
                 </div>
             </div>
         </section>
 
-        <section id="features" class="features-section">
-            <h2 class="section-title">The Gravity-Defying Architecture</h2>
+        <!-- ════════ WHAT IT DOES ════════ -->
+        <section id="how" class="features-section">
+            <h2 class="section-title">What Graviton Does</h2>
             <div class="grid features-grid">
 
                 <div class="feature-card glassmorphism hover-tilt">
-                    <div class="icon-wrapper">
-                        <span>🗜️</span>
-                    </div>
-                    <h3>Extreme Quantization</h3>
-                    <p>Features state-of-the-art 1.58-bit Ternary quantization, collapsing 16-bit weights down to just
-                        {-1, 0, +1} for absolutely massive 10x compression ratios.</p>
+                    <div class="icon-wrapper"><span>💻</span></div>
+                    <h3>Run 70B Models on a Mac</h3>
+                    <p>A 72-billion parameter AI model normally needs 144 GB of memory.
+                        Graviton compresses it to 36 GB — and loads it
+                        piece by piece so your computer never runs out of RAM.</p>
                 </div>
 
                 <div class="feature-card glassmorphism hover-tilt">
-                    <div class="icon-wrapper">
-                        <span>⚡</span>
-                    </div>
-                    <h3>Dynamic Sparsity</h3>
-                    <p>Replaces dense computations with Top-K zeroing and Mixture of Experts (MoE) routing. Dynamically
-                        prunes 70%+ of the compute pipeline per token natively.</p>
+                    <div class="icon-wrapper"><span>🔒</span></div>
+                    <h3>Your Data Stays on Your Machine</h3>
+                    <p>No cloud. No API keys. No monthly bill. Everything runs locally.
+                        Your conversations and data never leave your computer.</p>
                 </div>
 
                 <div class="feature-card glassmorphism hover-tilt">
-                    <div class="icon-wrapper">
-                        <span>💿</span>
-                    </div>
-                    <h3>Layer Streaming</h3>
-                    <p>Limits shattered. Bypasses physical RAM limitations by memory-mapping (mmap) weights
-                        asynchronously directly from NVMe SSDs to the computation engine.</p>
+                    <div class="icon-wrapper"><span>🗜️</span></div>
+                    <h3>Shrink Models up to 10x</h3>
+                    <p>Graviton compresses AI models from 16-bit down to 4-bit or even 1.58-bit —
+                        making them 4 to 10 times smaller without losing the ability to think clearly.</p>
                 </div>
 
                 <div class="feature-card glassmorphism hover-tilt">
-                    <div class="icon-wrapper">
-                        <span>🧠</span>
-                    </div>
-                    <h3>Speculative Decoding</h3>
-                    <p>Accelerates generation by 2-3x by utilizing Draft vs Target generation heuristics, bypassing
-                        memory bandwidth walls during autoregressive decoding.</p>
+                    <div class="icon-wrapper"><span>🌊</span></div>
+                    <h3>Stream Models That Don't Fit in Memory</h3>
+                    <p>Even if a model is too large for your RAM, Graviton loads it one layer at a time
+                        from your SSD, compresses each layer instantly, and keeps going.
+                        The model never has to fit in memory all at once.</p>
                 </div>
 
                 <div class="feature-card glassmorphism hover-tilt">
-                    <div class="icon-wrapper">
-                        <span>🔩</span>
-                    </div>
-                    <h3>QuantizedLinear</h3>
-                    <p>Drop-in replacement for nn.Linear that stores weights in packed quantized format. INT8 saves 62% memory with near-zero quality loss. Mixed-precision routes critical layers to 8-bit, FFN to 4-bit automatically.</p>
+                    <div class="icon-wrapper"><span>⚡</span></div>
+                    <h3>Fast Generation</h3>
+                    <p>Speculative decoding predicts multiple tokens at once and verifies them in a single step.
+                        Dynamic sparsity skips 70% of unnecessary computation per token.
+                        Result: 2–3x faster text generation.</p>
                 </div>
 
                 <div class="feature-card glassmorphism hover-tilt">
-                    <div class="icon-wrapper">
-                        <span>🖥️</span>
-                    </div>
-                    <h3>Graviton UI</h3>
-                    <p>Beautiful dark-themed <a href="https://github.com/opengraviton/graviton-ui" target="_blank" style="color: var(--primary);">chat interface</a> — enter a HuggingFace token, pick a model and quantization mode, and chat with real-time SSE streaming and live tok/s counter. One command: <code style="color: var(--primary);">graviton-ui</code>.</p>
-                </div>
-
-                <div class="feature-card glassmorphism hover-tilt">
-                    <div class="icon-wrapper">
-                        <span>🧪</span>
-                    </div>
-                    <h3>88 Tests, Full Coverage</h3>
-                    <p>Every component is battle-tested: attention masks, quantizer device consistency, speculative decoding rollback, KV cache fast-path and compressed modes, and end-to-end model inference — all validated in under 3 seconds.</p>
+                    <div class="icon-wrapper"><span>🤖</span></div>
+                    <h3>Built for AI Agents Too</h3>
+                    <p>A headless API server with zero UI dependencies.
+                        AI agents on low-budget machines can load and use 70B+ models
+                        through a simple REST API — no GPU cluster, no cloud bill.</p>
                 </div>
 
             </div>
         </section>
 
-        <section id="benchmarks" class="features-section" style="margin-top: 2rem;">
-            <h2 class="section-title">Actual Benchmarks</h2>
+        <!-- ════════ THE NUMBERS ════════ -->
+        <section class="features-section" style="margin-top: 2rem;">
+            <h2 class="section-title">The Numbers</h2>
 
             <div class="terminal-container glassmorphism"
-                style="text-align: left; padding: 2rem; max-width: 600px; margin: 0 auto;">
-                <h3 style="color: #00e5a0; margin-bottom: 1.5rem; font-size: 1.4rem;">Live Inference — TinyLlama-1.1B</h3>
-                <ul style="list-style: none; padding-left: 0; font-size: 1.1rem; line-height: 2;">
-                    <li><span style="display:inline-block; width: 25px;">💻</span> <strong>Hardware:</strong>
-                        <span style="float: right;">Apple M1 Max (64GB)</span>
+                style="text-align: left; padding: 2rem; max-width: 550px; margin: 0 auto;">
+                <h3 style="color: #00e5a0; margin-bottom: 1.5rem; font-size: 1.4rem;">72B AI Model on a Mac</h3>
+                <ul style="list-style: none; padding-left: 0; font-size: 1.15rem; line-height: 2.2;">
+                    <li><strong>Without Graviton:</strong>
+                        <span style="float: right; color: #ff6584;">144 GB — crashes</span>
                     </li>
-                    <li><span style="display:inline-block; width: 25px;">📦</span> <strong>Model Size:</strong>
-                        <span style="float: right;">1.10B params, 2.05 GB</span>
+                    <li><strong>With Graviton:</strong>
+                        <span style="float: right; color: #00e5a0; font-weight: 600;">36 GB — runs on a laptop</span>
                     </li>
-                    <li><span style="display:inline-block; width: 25px;">⚡</span> <strong>Decode Speed:</strong>
-                        <span style="float: right;">16–31 tok/s <span style="color: #00e5a0; font-size: 0.9em;">(MPS Metal)</span></span>
+                    <li><strong>Compression:</strong>
+                        <span style="float: right;">4x smaller</span>
                     </li>
-                    <li><span style="display:inline-block; width: 25px;">🧠</span> <strong>KV Cache:</strong>
-                        <span style="float: right;">INT8 compressed</span>
+                    <li><strong>Hardware needed:</strong>
+                        <span style="float: right;">Mac with 64 GB RAM</span>
                     </li>
-                    <li><span style="display:inline-block; width: 25px;">🔮</span> <strong>Attention:</strong>
-                        <span style="float: right;">GQA + Flash Attention + RoPE</span>
+                    <li><strong>GPU server needed:</strong>
+                        <span style="float: right; color: #00e5a0;">No</span>
                     </li>
-                </ul>
-                <div
-                    style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); font-size: 0.85rem;">
-                    * Full end-to-end inference: HuggingFace download, tokenization, transformer forward pass, sampling, and streaming text output.
-                </div>
-            </div>
-
-            <div class="terminal-container glassmorphism"
-                style="text-align: left; padding: 2rem; max-width: 600px; margin: 2rem auto 0 auto;">
-                <h3 style="color: #b882ff; margin-bottom: 1.5rem; font-size: 1.4rem;">Memory Compression via QuantizedLinear</h3>
-                <ul style="list-style: none; padding-left: 0; font-size: 1.1rem; line-height: 2;">
-                    <li><span style="display:inline-block; width: 25px;">🔴</span> <strong>Baseline (FP16):</strong>
-                        <span style="float: right;">2.05 GB</span>
+                    <li><strong>Cloud subscription:</strong>
+                        <span style="float: right; color: #00e5a0;">No</span>
                     </li>
-                    <li><span style="display:inline-block; width: 25px;">🟡</span> <strong>INT8 QuantizedLinear:</strong>
-                        <span style="float: right;">0.78 GB <span style="color: #00e5a0; font-size: 0.9em;">(62% smaller, ~19 tok/s)</span></span>
-                    </li>
-                    <li><span style="display:inline-block; width: 25px;">🟠</span> <strong>Mixed-Precision (8/4):</strong>
-                        <span style="float: right;">0.78 GB <span style="color: #00e5a0; font-size: 0.9em;">(critical=8b, FFN=4b)</span></span>
-                    </li>
-                    <li><span style="display:inline-block; width: 25px;">🟢</span> <strong>Graviton INT4:</strong> <span
-                            style="float: right;">0.24 GB <span style="color: var(--primary); font-size: 0.9em;">(8.4x
-                                smaller)</span></span></li>
-                    <li><span style="display:inline-block; width: 25px;">🟣</span> <strong>Graviton Ternary
-                            (1.58-bit):</strong> <span style="float: right;">0.24 GB <span
-                                style="color: var(--primary); font-size: 0.9em;">(8.4x smaller)</span></span></li>
-                </ul>
-                <div
-                    style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); font-size: 0.85rem;">
-                    * QuantizedLinear replaces nn.Linear at load time — 154 layers quantized, 1,318 MB saved. Tested natively on Apple Silicon.
-                </div>
-            </div>
-
-            <div class="terminal-container glassmorphism"
-                style="text-align: left; padding: 2rem; max-width: 600px; margin: 2rem auto 0 auto;">
-                <h3 style="color: #ff6584; margin-bottom: 1.5rem; font-size: 1.4rem;">Extreme Stress Test (140B Scale)
-                </h3>
-                <ul style="list-style: none; padding-left: 0; font-size: 1.1rem; line-height: 2;">
-                    <li><span style="display:inline-block; width: 25px;">💻</span> <strong>Hardware:</strong>
-                        <span style="float: right;">Apple M1 Max (64GB)</span>
-                    </li>
-                    <li><span style="display:inline-block; width: 25px;">🔴</span> <strong>Original FP16 Model:</strong>
-                        <span style="float: right;">~280 GB <span style="color: #ff6584; font-size: 0.9em;">(OOM
-                                Crash)</span></span>
-                    </li>
-                    <li><span style="display:inline-block; width: 25px;">🟢</span> <strong>Graviton Ternary
-                            Model:</strong>
-                        <span style="float: right;">~35.0 GB <span
-                                style="color: var(--primary); font-size: 0.9em;">(Fits in RAM)</span></span>
-                    </li>
-                    <li><span style="display:inline-block; width: 25px;">⚡</span> <strong>Quantization Speed:</strong>
-                        <span style="float: right;">0.98 GB/s</span>
+                    <li><strong>Cost:</strong>
+                        <span style="float: right; color: #00e5a0;">Free</span>
                     </li>
                 </ul>
-                <div
-                    style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); font-size: 0.85rem;">
-                    * Synthetic tensor test verifying 140 Billion parameter dimensions bypass Apple's unified memory
-                    limitations via pure 1.58-bit packing.
-                </div>
             </div>
         </section>
 
-        <section id="quickstart" class="quickstart-section">
-            <h2 class="section-title">Initialize in Seconds</h2>
+        <!-- ════════ GET STARTED ════════ -->
+        <section id="start" class="quickstart-section">
+            <h2 class="section-title">Get Started</h2>
+
             <div class="terminal-container glassmorphism">
                 <div class="terminal-header">
                     <div class="dot red"></div>
                     <div class="dot yellow"></div>
                     <div class="dot green"></div>
-                    <span class="terminal-title">bash</span>
+                    <span class="terminal-title">For you — install and start chatting</span>
                 </div>
                 <div class="terminal-body">
-                    <pre><code class="language-bash">
-<span class="comment"># 1. Clone and install Graviton</span>
-git clone https://github.com/opengraviton/graviton.git
-cd graviton
-pip install -e ".[all]"
-
-<span class="comment"># 2. View your hardware capabilities</span>
-python3 -m graviton.cli.main info
-
-<span class="comment"># 3. Run a model locally (CLI)</span>
-graviton run TinyLlama/TinyLlama-1.1B-Chat-v1.0 \
-    -p 'Explain quantum computing in one sentence:'
-
-<span class="comment"># Or launch the Web UI</span>
-pip install graviton-ui
-graviton-ui          <span class="comment"># opens http://localhost:7860</span>
-                    </code></pre>
+                    <pre><code class="language-bash">pip install graviton-ui && graviton-ui</code></pre>
                 </div>
             </div>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.75rem; text-align: center;">
+                Your browser opens. Pick a model. Start chatting. That's it.
+            </p>
 
-            <div class="terminal-container glassmorphism" style="margin-top: 1.5rem;">
+            <div class="terminal-container glassmorphism" style="margin-top: 2.5rem;">
                 <div class="terminal-header">
                     <div class="dot red"></div>
                     <div class="dot yellow"></div>
                     <div class="dot green"></div>
-                    <span class="terminal-title">output</span>
+                    <span class="terminal-title">For AI agents — headless API, zero UI</span>
                 </div>
                 <div class="terminal-body">
-                    <pre><code>Quantized 154 linear layers, saved 1318 MB in packed storage
-Model ready: 0.13B params, 0.78 GB on mps
-Quantization: INT8 uniform
-
-Prompt: Explain quantum computing briefly.
---------------------------------------------------
-Generation: Quantum computing is an emerging field of computing
-that operates using quantum mechanics rather than classical
-computing principles...
---------------------------------------------------
-Generated 80 tokens in 4.28s (18.7 tok/s)</code></pre>
+                    <pre><code class="language-bash">pip install "graviton-ai[api]" && graviton-api</code></pre>
                 </div>
             </div>
-
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem; text-align: center;">
-                For gated models (LLaMA, Mixtral, etc.), set up a
-                <a href="https://huggingface.co/settings/tokens" target="_blank" style="color: var(--primary);">HuggingFace token</a>
-                first. See the
-                <a href="https://github.com/opengraviton/graviton#huggingface-setup-for-downloading-models" target="_blank" style="color: var(--primary);">full guide</a>.
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.75rem; text-align: center;">
+                REST API on <code style="color: var(--primary);">0.0.0.0:7860</code>.
+                Load models, send messages, get streaming responses. No browser needed.
             </p>
+
         </section>
     </main>
 
     <footer class="glassmorphism">
-        <p>Built for the Open Source Community. Released under Apache 2.0 License.</p>
-        <p>&copy; 2026 OpenGraviton Organization. All rights reserved.</p>
+        <p>Free and open-source. Apache 2.0 License.</p>
+        <p>AI should be accessible to everyone.</p>
+        <p>&copy; 2025 – 2026 OpenGraviton</p>
     </footer>
 
     <script>
-        // Simple tilt effect for feature cards
         document.querySelectorAll('.hover-tilt').forEach(card => {
             card.addEventListener('mousemove', e => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
-
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-
                 const rotateX = ((y - centerY) / centerY) * -5;
                 const rotateY = ((x - centerX) / centerX) * 5;
-
                 card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
             });
-
             card.addEventListener('mouseleave', () => {
                 card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
             });

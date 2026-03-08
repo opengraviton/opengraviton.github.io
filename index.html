@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="OpenGraviton - Ultra-efficient open-source AI inference engine. Run massive models on consumer hardware with QuantizedLinear (INT8/INT4/Ternary), speculative decoding, dynamic sparsity, and layer streaming. 83 tests, battle-tested.">
+        content="OpenGraviton - Ultra-efficient open-source AI inference engine. Run massive models on consumer hardware with QuantizedLinear (INT8/INT4/Ternary), speculative decoding, dynamic sparsity, and layer streaming. Includes Graviton UI — a dark-themed chat interface. 88 tests, battle-tested.">
     <meta name="keywords"
         content="Graviton, OpenGraviton, AI Engine, Large Language Models, Local AI, Mac Mini AI, Model Quantization, QuantizedLinear, Mixed Precision, Speculative Decoding, Layer Skip, KV Cache Compression, MoE, Open Source AI, Ternary Quantization">
 
@@ -31,7 +31,7 @@
       "name": "Graviton Engine",
       "operatingSystem": "macOS, Linux",
       "applicationCategory": "DeveloperApplication",
-      "description": "An open-source highly-optimized AI inference engine featuring QuantizedLinear (INT8/INT4/1.58-bit ternary), mixed-precision quantization, speculative decoding with layer-skip, dynamic sparsity, and layer streaming — enabling local execution of colossal AI models on minimal hardware. Battle-tested with 83 automated tests.",
+      "description": "An open-source highly-optimized AI inference engine featuring QuantizedLinear (INT8/INT4/1.58-bit ternary), mixed-precision quantization, speculative decoding with layer-skip, dynamic sparsity, layer streaming, and Graviton UI chat interface — enabling local execution of colossal AI models on minimal hardware. Battle-tested with 88 automated tests.",
       "url": "https://opengraviton.github.io",
       "sourceOrganization": {
         "@type": "Organization",
@@ -65,7 +65,8 @@
             <span>OpenGraviton</span>
         </div>
         <div class="nav-links">
-            <a href="https://github.com/opengraviton/graviton" target="_blank" class="nav-link">GitHub</a>
+            <a href="https://github.com/opengraviton/graviton" target="_blank" class="nav-link">Engine</a>
+            <a href="https://github.com/opengraviton/graviton-ui" target="_blank" class="nav-link">Web UI</a>
             <a href="#features" class="nav-link">Architecture</a>
             <a href="#quickstart" class="btn btn-primary">Get Started</a>
         </div>
@@ -86,6 +87,7 @@
                 <div class="cta-group">
                     <a href="https://github.com/opengraviton/graviton" target="_blank" class="btn btn-glow">View Source
                         on GitHub</a>
+                    <a href="https://github.com/opengraviton/graviton-ui" target="_blank" class="btn btn-outline">Try the Web UI</a>
                     <a href="#features" class="btn btn-outline">Explore Tech</a>
                 </div>
             </div>
@@ -137,6 +139,14 @@
                     </div>
                     <h3>QuantizedLinear</h3>
                     <p>Drop-in replacement for nn.Linear that stores weights in packed quantized format. INT8 saves 62% memory with near-zero quality loss. Mixed-precision routes critical layers to 8-bit, FFN to 4-bit automatically.</p>
+                </div>
+
+                <div class="feature-card glassmorphism hover-tilt">
+                    <div class="icon-wrapper">
+                        <span>🖥️</span>
+                    </div>
+                    <h3>Graviton UI</h3>
+                    <p>Beautiful dark-themed <a href="https://github.com/opengraviton/graviton-ui" target="_blank" style="color: var(--primary);">chat interface</a> — enter a HuggingFace token, pick a model and quantization mode, and chat with real-time SSE streaming and live tok/s counter. One command: <code style="color: var(--primary);">graviton-ui</code>.</p>
                 </div>
 
                 <div class="feature-card glassmorphism hover-tilt">
@@ -253,9 +263,13 @@ pip install -e ".[all]"
 <span class="comment"># 2. View your hardware capabilities</span>
 python3 -m graviton.cli.main info
 
-<span class="comment"># 3. Run a model locally</span>
-python3 -m graviton.cli.main run 'TinyLlama/TinyLlama-1.1B-Chat-v1.0' \
+<span class="comment"># 3. Run a model locally (CLI)</span>
+graviton run TinyLlama/TinyLlama-1.1B-Chat-v1.0 \
     -p 'Explain quantum computing in one sentence:'
+
+<span class="comment"># Or launch the Web UI</span>
+pip install graviton-ui
+graviton-ui          <span class="comment"># opens http://localhost:7860</span>
                     </code></pre>
                 </div>
             </div>

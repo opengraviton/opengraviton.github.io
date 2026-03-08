@@ -197,18 +197,25 @@
                 </div>
                 <div class="terminal-body">
                     <pre><code class="language-bash">
-<span class="comment"># 1. Clone the Graviton core</span>
+<span class="comment"># 1. Clone and install Graviton</span>
 git clone https://github.com/opengraviton/graviton.git
 cd graviton
+pip install -e ".[all]"
 
 <span class="comment"># 2. View your hardware capabilities and theoretical model bounds</span>
 python3 -m graviton.cli.main info
 
-<span class="comment"># 3. Enter orbit and start generating</span>
-python3 -m graviton.cli.main run "mixtral-8x22b" -p "Explain quantum gravity"
+<span class="comment"># 3. Enter orbit — run a model locally</span>
+python3 -m graviton.cli.main run "TinyLlama/TinyLlama-1.1B-Chat-v1.0" -p "Explain quantum gravity"
                     </code></pre>
                 </div>
             </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem; text-align: center;">
+                For gated models (LLaMA, Mixtral, etc.), set up a
+                <a href="https://huggingface.co/settings/tokens" target="_blank" style="color: var(--primary);">HuggingFace token</a>
+                first. See the
+                <a href="https://github.com/opengraviton/graviton#huggingface-setup-for-downloading-models" target="_blank" style="color: var(--primary);">full guide</a>.
+            </p>
         </section>
     </main>
 

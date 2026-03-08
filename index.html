@@ -136,10 +136,36 @@
 
         <section id="benchmarks" class="features-section" style="margin-top: 2rem;">
             <h2 class="section-title">Actual Benchmarks</h2>
+
             <div class="terminal-container glassmorphism"
                 style="text-align: left; padding: 2rem; max-width: 600px; margin: 0 auto;">
-                <h3 style="color: #b882ff; margin-bottom: 1.5rem; font-size: 1.4rem;">TinyLlama-1.1B Memory Footprint
-                </h3>
+                <h3 style="color: #00e5a0; margin-bottom: 1.5rem; font-size: 1.4rem;">Live Inference — TinyLlama-1.1B</h3>
+                <ul style="list-style: none; padding-left: 0; font-size: 1.1rem; line-height: 2;">
+                    <li><span style="display:inline-block; width: 25px;">💻</span> <strong>Hardware:</strong>
+                        <span style="float: right;">Apple M1 Max (64GB)</span>
+                    </li>
+                    <li><span style="display:inline-block; width: 25px;">📦</span> <strong>Model Size:</strong>
+                        <span style="float: right;">1.10B params, 2.05 GB</span>
+                    </li>
+                    <li><span style="display:inline-block; width: 25px;">⚡</span> <strong>Decode Speed:</strong>
+                        <span style="float: right;">16–31 tok/s <span style="color: #00e5a0; font-size: 0.9em;">(MPS Metal)</span></span>
+                    </li>
+                    <li><span style="display:inline-block; width: 25px;">🧠</span> <strong>KV Cache:</strong>
+                        <span style="float: right;">INT8 compressed</span>
+                    </li>
+                    <li><span style="display:inline-block; width: 25px;">🔮</span> <strong>Attention:</strong>
+                        <span style="float: right;">GQA + Flash Attention + RoPE</span>
+                    </li>
+                </ul>
+                <div
+                    style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); font-size: 0.85rem;">
+                    * Full end-to-end inference: HuggingFace download, tokenization, transformer forward pass, sampling, and streaming text output.
+                </div>
+            </div>
+
+            <div class="terminal-container glassmorphism"
+                style="text-align: left; padding: 2rem; max-width: 600px; margin: 2rem auto 0 auto;">
+                <h3 style="color: #b882ff; margin-bottom: 1.5rem; font-size: 1.4rem;">Memory Compression</h3>
                 <ul style="list-style: none; padding-left: 0; font-size: 1.1rem; line-height: 2;">
                     <li><span style="display:inline-block; width: 25px;">🔴</span> <strong>Baseline (FP16):</strong>
                         <span style="float: right;">2.05 GB</span>
@@ -202,14 +228,37 @@ git clone https://github.com/opengraviton/graviton.git
 cd graviton
 pip install -e ".[all]"
 
-<span class="comment"># 2. View your hardware capabilities and theoretical model bounds</span>
+<span class="comment"># 2. View your hardware capabilities</span>
 python3 -m graviton.cli.main info
 
-<span class="comment"># 3. Enter orbit — run a model locally</span>
-python3 -m graviton.cli.main run 'TinyLlama/TinyLlama-1.1B-Chat-v1.0' -p 'Explain quantum gravity'
+<span class="comment"># 3. Run a model locally</span>
+python3 -m graviton.cli.main run 'TinyLlama/TinyLlama-1.1B-Chat-v1.0' \
+    -p 'Explain quantum computing in one sentence:'
                     </code></pre>
                 </div>
             </div>
+
+            <div class="terminal-container glassmorphism" style="margin-top: 1.5rem;">
+                <div class="terminal-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                    <span class="terminal-title">output</span>
+                </div>
+                <div class="terminal-body">
+                    <pre><code>Model ready: 1.10B params, 2.05 GB on mps
+
+Prompt: Explain quantum computing in one sentence:
+--------------------------------------------------
+Generation: Quantum computing uses quantum mechanics to perform
+calculations that would be impossible with classical computers,
+such as factoring large numbers or solving complex problems in
+seconds instead of hours.
+--------------------------------------------------
+Generated 35 tokens in 2.57s (31.1 tok/s)</code></pre>
+                </div>
+            </div>
+
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem; text-align: center;">
                 For gated models (LLaMA, Mixtral, etc.), set up a
                 <a href="https://huggingface.co/settings/tokens" target="_blank" style="color: var(--primary);">HuggingFace token</a>

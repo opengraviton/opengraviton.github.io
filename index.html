@@ -7,7 +7,7 @@
     <meta name="description"
         content="Graviton — open-source engine that runs 500B+ parameter LLMs locally on a Mac Mini. AI belongs to everyone, not corporations. Break free from cloud monopolies.">
     <meta name="keywords"
-        content="run LLM locally, 500B LLM Mac Mini, local AI, free AI, open source LLM, AI without cloud, AI on Mac, 70B model laptop, private AI, offline AI, Graviton, OpenGraviton, democratize AI, AI for everyone, consumer hardware AI, Apple Silicon AI, break AI monopoly">
+        content="run LLM locally, 500B LLM Mac Mini, local AI, free AI, open source LLM, AI without cloud, AI on Mac, 70B model laptop, private AI, offline AI, Graviton, OpenGraviton, Graviton-Native, BitNet, MoE, democratize AI, AI for everyone, consumer hardware AI, Apple Silicon AI, break AI monopoly, 32GB RAM LLM">
 
     <meta property="og:title" content="Graviton — 500B+ LLMs on a Mac Mini. AI for Everyone.">
     <meta property="og:description"
@@ -40,6 +40,7 @@
         "One command install and launch",
         "Compresses models up to 10x to fit in limited memory",
         "Streams large models layer-by-layer so they never exceed your RAM",
+        "Graviton-Native: BitNet and MoE architectures for 32GB RAM",
         "Headless API server for AI agents on low-budget hardware",
         "Works on Apple Silicon, NVIDIA GPU, or CPU",
         "Chat UI included — pick a model and start talking",
@@ -68,6 +69,7 @@
         </div>
         <div class="nav-links">
             <a href="https://github.com/opengraviton/graviton" target="_blank" class="nav-link">GitHub</a>
+            <a href="paper.html" class="nav-link">Paper</a>
             <a href="#how" class="nav-link">How It Works</a>
             <a href="#start" class="btn btn-primary">Get Started</a>
         </div>
@@ -145,6 +147,14 @@
                         through a simple REST API — no GPU cluster, no cloud bill.</p>
                 </div>
 
+                <div class="feature-card glassmorphism hover-tilt">
+                    <div class="icon-wrapper"><span>🧬</span></div>
+                    <h3>Graviton-Native: Efficient Architectures</h3>
+                    <p>Train models from scratch with BitNet (ternary weights) and MoE.
+                        350M params in ~66 MB. 500B MoE with 32GB RAM.
+                        <a href="paper.html" style="color: var(--primary);">Technical report →</a></p>
+                </div>
+
             </div>
         </section>
 
@@ -216,6 +226,9 @@
                 Load models, send messages, get streaming responses. No browser needed.
             </p>
 
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <a href="paper.html" class="btn btn-outline">Read Graviton-Native Paper</a>
+            </div>
         </section>
     </main>
 
